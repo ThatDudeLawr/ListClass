@@ -90,6 +90,7 @@ public:
 
 };
 
+//Search for a specific position in the list
 template<class T>
 Nod<T>* Lista<T>::cautare(int poz) const
 {
@@ -97,7 +98,9 @@ Nod<T>* Lista<T>::cautare(int poz) const
 	{
 		return NULL;
 	}
+
 	Nod<T>* i = start;
+
 	while (poz)
 	{
 		if (!i)
@@ -111,6 +114,7 @@ Nod<T>* Lista<T>::cautare(int poz) const
 	return i;
 }
 
+//Deletes all the nodes from the list
 template<class T>
 void Lista<T>::empty()
 {
@@ -151,6 +155,7 @@ Lista<T>::~Lista()
 	empty();
 }
 
+//Add an element to the end of the list
 template<class T>
 void Lista<T>::pushBack(T val)
 {
@@ -176,6 +181,7 @@ void Lista<T>::pushBack(T val)
 	}
 }
 
+//Add an element to the beginning of the list
 template<class T>
 void Lista<T>::pushFront(T val)
 {
@@ -200,6 +206,7 @@ void Lista<T>::pushFront(T val)
 	}
 }
 
+//Deletes the last element from the list
 template<class T>
 T Lista<T>::popBack()
 {
@@ -229,6 +236,7 @@ T Lista<T>::popBack()
 	return val;
 }
 
+//Deletes the first element of the list
 template<class T>
 T Lista<T>::popFront()
 {
@@ -252,6 +260,7 @@ T Lista<T>::popFront()
 	return val;
 }
 
+//Return the list number of nodes
 template<class T>
 int Lista<T>::size() const
 {
@@ -272,6 +281,7 @@ int Lista<T>::size() const
 	return count;
 }
 
+//Makes the list accessible like an array(a[0], a[1], ...)
 template<class T>
 T Lista<T>::operator [] (int i) const
 {

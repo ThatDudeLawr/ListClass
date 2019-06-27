@@ -4,8 +4,8 @@
 template <class T>
 class Nod
 {
-	T data;
-	Nod* next;
+	T data; //Stores a value in the node
+	Nod* next; //Points toward the next node from the list
 public:
 	Nod(T val);
 	~Nod();
