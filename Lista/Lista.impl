@@ -399,6 +399,7 @@ List<T>& List<T>::operator-(const List<T>& other)
 	return *this;
 }
 
+template<class T>
 List<T>& List<T>::operator*(const List<T>& other)
 {
 	// TODO: insert return statement here
