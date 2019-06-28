@@ -34,9 +34,8 @@ int main()
 	cout << "A: ";
 	DebugPrintList(a);
 
-	//TODO: Fix this.
-	//cout << "List+C: ";
-	//DebugPrintList(list + c);
+    cout << "List+C: ";
+	DebugPrintList(list + c);
 
 	for (int i = 0; i < 10; i++)
 	{

@@ -285,7 +285,7 @@ inline bool Lista<T>::operator!=(const Lista<T>& other)
 template<class T>
 inline Lista<T>& Lista<T>::operator+(const Lista<T>& other)
 {
-	Lista<T> result(*this);
+    Lista<T>& result = (*this);
 
 	for (int i = 0; i < other.Size(); i++)
 	{
