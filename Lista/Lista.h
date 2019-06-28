@@ -16,6 +16,7 @@ public:
 	T PopFront();
 
 	int Size() const;
+    List<T>* ReverseCopy();
 
 	T operator [] (int i) const;
 	List<T>& operator =(const List<T>& list);
@@ -24,6 +25,10 @@ public:
 	bool operator !=(const List<T>& other);
 
     bool operator <(const List<T>& other);
+    bool operator >(const List<T>& other);
+
+    bool operator <=(const List<T>& other);
+    bool operator >=(const List<T>& other);
 
 	List<T>& operator+(const List<T>& other);
 

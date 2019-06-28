@@ -5,6 +5,11 @@ using namespace std;
 
 void DebugPrintList(const List<int>& list);
 
+void TestPushBack()
+{
+
+}
+
 int main()
 {
 	List<int> list;
