@@ -264,7 +264,7 @@ void TestSmallerOrEqualOperator()
     DebugPrintList(listA);
     DebugPrintList(listB);
 
-    cout << "A < B: " << (listA <= listB) << endl << endl;
+    cout << "A <= B: " << (listA <= listB) << endl << endl;
 
     List<int> listC;
     listC.PushBack(1);
@@ -281,7 +281,7 @@ void TestSmallerOrEqualOperator()
     DebugPrintList(listC);
     DebugPrintList(listD);
 
-    cout << "C < D: " << (listC <= listD) << endl << endl;
+    cout << "C <= D: " << (listC <= listD) << endl << endl;
 
     List<int> listE;
     listE.PushBack(1);
@@ -298,7 +298,7 @@ void TestSmallerOrEqualOperator()
     DebugPrintList(listE);
     DebugPrintList(listF);
 
-    cout << "E < F: " << (listE <= listF) << endl << endl;
+    cout << "E <= F: " << (listE <= listF) << endl << endl;
 
     LOGSPACE();
 }
@@ -509,6 +509,7 @@ void TestOperatorMinus()
 
 	cout << "Minus: " << endl;
 	DebugPrintList(listC - listD);
+	LOGSPACE();
 }
 
 void TestShiftLeftOperator()
