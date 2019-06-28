@@ -2,6 +2,7 @@
 #include "Nod.h"
 
 //TODO: Make a const correct run.
+//TODO: Create a new list if needed for return.
 
 template <class T>
 class List

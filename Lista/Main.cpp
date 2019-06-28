@@ -549,6 +549,34 @@ void TestShiftRightOperator()
 	LOGSPACE();
 }
 
+void TestStarOperators()
+{
+	LOGFUNCTION();
+
+	List<int> a;
+	a.PushBack(1);
+	a.PushBack(2);
+	a.PushBack(3);
+	a.PushBack(4);
+	a.PushBack(5);
+
+	List<int> b;
+	b.PushBack(1);
+	b.PushBack(0);
+	b.PushBack(3);
+	b.PushBack(2);
+	b.PushBack(5);
+
+	DebugPrintList(a);
+	DebugPrintList(b);
+
+	cout << "A*B= ";
+
+	DebugPrintList(a * b);
+
+	LOGSPACE();
+}
+
 int main()
 {
     TestPushBack();
@@ -573,6 +601,7 @@ int main()
 
 	TestShiftLeftOperator();
 	TestShiftRightOperator();
+	TestStarOperators();
 
 	return 0;
 }

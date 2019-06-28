@@ -402,17 +402,19 @@ List<T>& List<T>::operator-(const List<T>& other)
 template<class T>
 List<T>& List<T>::operator*(const List<T>& other)
 {
-	// TODO: insert return statement here
 	const int& n = other.Size();
-	List<T> a, b = *this;
+	List<T>& b = *this;
+
+	List<T>* a = new List<T>();
+
 	for (int i = 0; i < n; i++)
 	{
 		if (other[i] == b[i])
 		{
-			a.PushBack(other[i]);
+			a->PushBack(other[i]);
 		}
 	}
-	return a;
+	return *a;
 }
 
 template<class T>
