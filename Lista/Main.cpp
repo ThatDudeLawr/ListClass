@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// Macros for debugging
 #define LOGFUNCTION() cout << "Running: " << __FUNCTION__ << "\n";
 #define LOGSPACE()    cout << "------------------------------------------------"; cout << endl; cout << endl;
 
@@ -440,7 +441,6 @@ void TestPlusOperator()
 
     LOGSPACE();
 }
-
 
 void TestImplicitOperator()
 {
