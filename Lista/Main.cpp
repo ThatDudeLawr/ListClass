@@ -417,6 +417,30 @@ void TestHigherOrEqualOperator()
     LOGSPACE();
 }
 
+void TestPlusOperator()
+{
+    LOGFUNCTION();
+
+    List<int> listA;
+    listA.PushBack(1);
+    listA.PushBack(2);
+    listA.PushBack(3);
+
+    List<int> listB;
+    listB.PushBack(2);
+    listB.PushBack(4);
+    listB.PushBack(6);
+
+    DebugPrintList(listA);
+    DebugPrintList(listB);
+
+    cout << "Concateneted: " << endl;
+    DebugPrintList(listA + listB);
+    cout << "1 2 3 2 4 6" << endl;
+
+    LOGSPACE();
+}
+
 int main()
 {
     TestPushBack();
@@ -433,6 +457,8 @@ int main()
     TestSmallerOrEqualOperator();
     TestHigherOperator();
     TestHigherOrEqualOperator();
+
+    TestPlusOperator();
 
 	return 0;
 }
