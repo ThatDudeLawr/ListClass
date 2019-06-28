@@ -441,6 +441,37 @@ void TestPlusOperator()
     LOGSPACE();
 }
 
+
+void TestImplicitOperator()
+{
+    LOGFUNCTION();
+
+    List<int> list;
+    int a = 5;
+    // We can so we know what overload of the 9 operator the compiler should choose.
+    List<int>& result = list + (List<int>)a + (List<int>)5 + (List<int>)10;
+    
+    DebugPrintList(result);
+    cout << "5 5 10" << endl;
+    
+    LOGSPACE();
+}
+
+void TestImplicitOperatorT()
+{
+    LOGFUNCTION();
+
+    List<int> list;
+    list.PushBack(5);
+    list.PushBack(10);
+
+    DebugPrintList(list);
+    cout << "List + 3 = " << 3 + list << endl;
+    cout << "List + 3 = " << 8 << endl;
+
+    LOGSPACE();
+}
+
 int main()
 {
     TestPushBack();
@@ -459,6 +490,8 @@ int main()
     TestHigherOrEqualOperator();
 
     TestPlusOperator();
+    TestImplicitOperator();
+    TestImplicitOperatorT();
 
 	return 0;
 }

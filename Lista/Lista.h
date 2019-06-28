@@ -6,7 +6,9 @@ class List
 {
 public:
 	List();
+    List(const T& val);
 	List(const List<T>& list);
+
 	~List();
 
 	void PushBack(T val);
@@ -17,6 +19,7 @@ public:
 
 	int Size() const;
 
+    operator T() const;
 	T operator [] (int i) const;
 	List<T>& operator =(const List<T>& list);
 
