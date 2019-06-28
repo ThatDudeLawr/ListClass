@@ -472,6 +472,46 @@ void TestImplicitOperatorT()
     LOGSPACE();
 }
 
+void TestOperatorMinus()
+{
+	LOGFUNCTION();
+
+	List<int> listA;
+	listA.PushBack(1);
+	listA.PushBack(2);
+	listA.PushBack(3);
+
+	List<int> listB;
+	listB.PushBack(1);
+	listB.PushBack(2);
+
+	DebugPrintList(listA);
+	DebugPrintList(listB);
+
+	cout << "Minus: " << endl;
+	DebugPrintList(listA - listB);
+
+	List<int> listC;
+	listC.PushBack(1);
+	listC.PushBack(2);
+	listC.PushBack(3);
+	listC.PushBack(4);
+	listC.PushBack(5);
+
+	List<int> listD;
+	listD.PushBack(2);
+	listD.PushBack(3);
+	listD.PushBack(4);
+
+	DebugPrintList(listC);
+	DebugPrintList(listD);
+
+	cout << "Minus: " << endl;
+	DebugPrintList(listC - listD);
+
+	LOGSPACE();
+}
+
 int main()
 {
     TestPushBack();
@@ -492,6 +532,7 @@ int main()
     TestPlusOperator();
     TestImplicitOperator();
     TestImplicitOperatorT();
+	TestOperatorMinus();
 
 	return 0;
 }

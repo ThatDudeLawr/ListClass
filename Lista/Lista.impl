@@ -270,9 +270,9 @@ inline bool List<T>::operator!=(const List<T>& other)
 }
 
 template<class T>
-bool List<T>::operator<(const List<T>& other)
+bool List<T>::operator<(const List<T>& other) const
 {
-    List<T>& currentList = (*this);
+    const List<T>& currentList = (*this);
 
     int currentSize = Size();
     int otherSize = other.Size();
@@ -292,9 +292,9 @@ bool List<T>::operator<(const List<T>& other)
 }
 
 template<class T>
-bool List<T>::operator>(const List<T>& other)
+bool List<T>::operator>(const List<T>& other) const
 {
-    List<T>& currentList = (*this);
+    const List<T>& currentList = (*this);
 
     int currentSize = Size();
     int otherSize = other.Size();
@@ -382,5 +382,20 @@ inline List<T>& List<T>::operator+(const List<T>& other)
 	}
 
 	return result;
+}
+
+template<class T>
+List<T>& List<T>::operator-(const List<T>& other)
+{
+	const List<T>& current = *this;
+	if (other < current)
+	{
+		for (int i = 0; i < other.Size(); i++)
+		{
+			PopFront();
+		}
+	}
+
+	return *this;
 }
 

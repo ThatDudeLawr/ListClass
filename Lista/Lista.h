@@ -1,6 +1,8 @@
 #pragma once
 #include "Nod.h"
 
+//TODO: Make a const correct run.
+
 template <class T>
 class List
 {
@@ -26,13 +28,14 @@ public:
 	bool operator ==(const List<T>& other);
 	bool operator !=(const List<T>& other);
 
-    bool operator <(const List<T>& other);
-    bool operator >(const List<T>& other);
+    bool operator <(const List<T>& other) const;
+    bool operator >(const List<T>& other) const;
 
     bool operator <=(const List<T>& other);
     bool operator >=(const List<T>& other);
 
 	List<T>& operator+(const List<T>& other);
+	List<T>& operator-(const List<T>& other);
 
 protected:
 	Node<T>* GetAtIndex(int poz) const;
