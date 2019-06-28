@@ -129,6 +129,10 @@
     <ClInclude Include="Lista.h" />
     <ClInclude Include="Nod.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Lista.impl" />
+    <None Include="Nod.impl" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

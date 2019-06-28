@@ -3,11 +3,11 @@
 
 using namespace std;
 
-void DebugPrintList(const Lista<int>& list);
+void DebugPrintList(const List<int>& list);
 
 int main()
 {
-	Lista<int> list;
+	List<int> list;
 	list.PushBack(1);
 	list.PushBack(2);
 	list.PushBack(3);
@@ -17,7 +17,7 @@ int main()
 
 	DebugPrintList(list);
 
-	Lista<int> c;
+	List<int> c;
 	
 	c = list;
 
@@ -29,7 +29,7 @@ int main()
 	c.PopBack();
 	c.PopFront();
 
-	Lista<int> a = c;
+	List<int> a = c;
 
 	cout << "A: ";
 	DebugPrintList(a);
@@ -50,7 +50,7 @@ int main()
 	return 0;
 }
 
-void DebugPrintList(const Lista<int>& list)
+void DebugPrintList(const List<int>& list)
 {
 	for (int i = 0; i < list.Size(); i++)
 	{

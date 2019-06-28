@@ -27,4 +27,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Lista.impl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="Nod.impl">
+      <Filter>Header Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>
