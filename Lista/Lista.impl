@@ -194,22 +194,6 @@ int List<T>::Size() const
 	return count;
 }
 
-template<class T>
-List<T>* List<T>::ReverseCopy()
-{
-    List<T>* newList = new List<T>();
-    List<T>& currentList = (*this);
-
-    int listSize = currentList.Size();
-
-    for (int i = 0; i < listSize; i++)
-    {
-        newList->PushFront(currentList[i]);
-    }
-
-    return newList;
-}
-
 //Makes the list accessible like an array(a[0], a[1], ...)
 template<class T>
 T List<T>::operator [] (int i) const
@@ -290,7 +274,23 @@ bool List<T>::operator<(const List<T>& other)
 template<class T>
 bool List<T>::operator>(const List<T>& other)
 {
-    return (other.ReverseCopy() < this->ReverseCopy());
+    List<T>& currentList = (*this);
+
+    int currentSize = Size();
+    int otherSize = other.Size();
+
+    // If our list has more elements, it cannot be inside the other list.
+    if (currentSize > otherSize) return false;
+
+    for (int i = 1; i <= currentSize ; i++)
+    {
+        if (currentList[currentSize - i] != other[otherSize - i])
+        {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 template<class T>
@@ -325,7 +325,30 @@ bool List<T>::operator<=(const List<T>& other)
 template<class T>
 bool List<T>::operator>=(const List<T>& other)
 {
-    return (other.ReverseCopy() <= this->ReverseCopy());
+    List<T>& currentList = (*this);
+
+    int currentSize = Size();
+    int otherSize = other.Size();
+
+    // If our list has more elements, it cannot be inside the other list.
+    if (currentSize > otherSize) return false;
+
+    int currentIndex = currentSize - 1, otherIndex = otherSize - 1;
+
+    while (currentIndex >= 0 && otherIndex >= 0)
+    {
+        if (currentList[currentIndex] == other[otherIndex])
+        {
+            currentIndex--;
+        }
+
+        otherIndex--;
+    }
+
+    // If we iteratate through the whole list we've found all the elements.
+    if (currentIndex < 0) return true;
+
+    return false;
 }
 
 template<class T>

@@ -301,6 +301,122 @@ void TestSmallerOrEqualOperator()
     LOGSPACE();
 }
 
+void TestHigherOperator()
+{
+    LOGFUNCTION();
+
+    List<int> listA;
+    listA.PushFront(1);
+    listA.PushFront(2);
+    listA.PushFront(3);
+
+    List<int> listB;
+    listB.PushFront(1);
+    listB.PushFront(2);
+    listB.PushFront(3);
+    listB.PushFront(4);
+    listB.PushFront(5);
+
+    DebugPrintList(listA);
+    DebugPrintList(listB);
+
+    cout << "A > B: " << (listA > listB) << endl << endl;
+
+    List<int> listC;
+    listC.PushFront(1);
+    listC.PushFront(2);
+    listC.PushFront(3);
+
+    List<int> listD;
+    listD.PushFront(0);
+    listD.PushFront(2);
+    listD.PushFront(3);
+    listD.PushFront(4);
+    listD.PushFront(5);
+
+    DebugPrintList(listC);
+    DebugPrintList(listD);
+
+    cout << "C > D: " << (listC > listD) << endl << endl;
+
+    List<int> listE;
+    listE.PushFront(1);
+    listE.PushFront(2);
+    listE.PushFront(3);
+
+    List<int> listF;
+    listF.PushFront(1);
+    listF.PushFront(0);
+    listF.PushFront(2);
+    listF.PushFront(0);
+    listF.PushFront(3);
+
+    DebugPrintList(listE);
+    DebugPrintList(listF);
+
+    cout << "E > F: " << (listE > listF) << endl << endl;
+
+    LOGSPACE();
+}
+
+void TestHigherOrEqualOperator()
+{
+    LOGFUNCTION();
+
+    List<int> listA;
+    listA.PushFront(1);
+    listA.PushFront(2);
+    listA.PushFront(3);
+
+    List<int> listB;
+    listB.PushFront(1);
+    listB.PushFront(2);
+    listB.PushFront(3);
+    listB.PushFront(4);
+    listB.PushFront(5);
+
+    DebugPrintList(listA);
+    DebugPrintList(listB);
+
+    cout << "A >= B: " << (listA >= listB) << endl << endl;
+
+    List<int> listC;
+    listC.PushFront(1);
+    listC.PushFront(2);
+    listC.PushFront(3);
+
+    List<int> listD;
+    listD.PushFront(0);
+    listD.PushFront(2);
+    listD.PushFront(3);
+    listD.PushFront(4);
+    listD.PushFront(5);
+
+    DebugPrintList(listC);
+    DebugPrintList(listD);
+
+    cout << "C >= D: " << (listC >= listD) << endl << endl;
+
+    List<int> listE;
+    listE.PushFront(1);
+    listE.PushFront(2);
+    listE.PushFront(3);
+
+    List<int> listF;
+    listF.PushFront(1);
+    listF.PushFront(0);
+    listF.PushFront(2);
+    listF.PushFront(0);
+    listF.PushFront(3);
+
+    DebugPrintList(listE);
+    DebugPrintList(listF);
+
+    cout << "E >= F: " << (listE >= listF) << endl << endl;
+
+    LOGSPACE();
+}
+
 int main()
 {
     TestPushBack();
@@ -312,10 +428,11 @@ int main()
 	
     TestDoubleEqualOperator();
     TestNotEqualOperator();
+
     TestSmallerOperator();
     TestSmallerOrEqualOperator();
-
-
+    TestHigherOperator();
+    TestHigherOrEqualOperator();
 
 	return 0;
 }

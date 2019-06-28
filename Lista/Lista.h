@@ -16,7 +16,6 @@ public:
 	T PopFront();
 
 	int Size() const;
-    List<T>* ReverseCopy();
 
 	T operator [] (int i) const;
 	List<T>& operator =(const List<T>& list);
