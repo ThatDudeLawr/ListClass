@@ -34,6 +34,13 @@ public:
 
 	List<T>& operator+(const List<T>& other);
 
+	List<T>& operator*(const List<T>& other);
+
+	List<T>& operator>>(int pos);
+
+	List<T>& operator<<(int pos);
+
+
 protected:
 	Node<T>* GetAtIndex(int poz) const;
 	void Empty();
