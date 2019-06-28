@@ -94,7 +94,8 @@ void TestEqualsOperator()
     list.PushBack(4);
     list.PushBack(5);
 
-    List<int> copy = list;
+	List<int> copy = list;
+
 
     DebugPrintList(list);
     DebugPrintList(copy);
@@ -467,7 +468,7 @@ void TestImplicitOperatorT()
 
     DebugPrintList(list);
     cout << "List + 3 = " << 3 + list << endl;
-    cout << "List + 3 = " << 8 << endl;
+    cout << "List[0] + 3 = " << 8 << endl;
 
     LOGSPACE();
 }
@@ -508,6 +509,42 @@ void TestOperatorMinus()
 
 	cout << "Minus: " << endl;
 	DebugPrintList(listC - listD);
+}
+
+void TestShiftLeftOperator()
+{
+	LOGFUNCTION();
+
+	List<int> a, b;
+	a.PushBack(1);
+	a.PushBack(2);
+	a.PushBack(3);
+	a.PushBack(4);
+	a.PushBack(5);
+
+	DebugPrintList(a);
+	std::cout << "Shift left 3 positions:" << endl;
+	a << 3;
+	DebugPrintList(a);
+
+	LOGSPACE();
+}
+
+void TestShiftRightOperator()
+{
+	LOGFUNCTION();
+
+	List<int> a, b;
+	a.PushBack(1);
+	a.PushBack(2);
+	a.PushBack(3);
+	a.PushBack(4);
+	a.PushBack(5);
+
+	DebugPrintList(a);
+	std::cout << "Shift right 3 positions:" << endl;
+	a >> 3;
+	DebugPrintList(a);
 
 	LOGSPACE();
 }
@@ -533,6 +570,9 @@ int main()
     TestImplicitOperator();
     TestImplicitOperatorT();
 	TestOperatorMinus();
+
+	TestShiftLeftOperator();
+	TestShiftRightOperator();
 
 	return 0;
 }

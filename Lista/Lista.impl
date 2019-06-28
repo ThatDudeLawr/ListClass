@@ -399,3 +399,44 @@ List<T>& List<T>::operator-(const List<T>& other)
 	return *this;
 }
 
+List<T>& List<T>::operator*(const List<T>& other)
+{
+	// TODO: insert return statement here
+	const int& n = other.Size();
+	List<T> a, b = *this;
+	for (int i = 0; i < n; i++)
+	{
+		if (other[i] == b[i])
+		{
+			a.PushBack(other[i]);
+		}
+	}
+	return a;
+}
+
+template<class T>
+List<T>& List<T>::operator>>(int pos)
+{
+	int n = this->Size();
+	List<T>& currentList = (*this);
+	while (pos)
+	{
+		PushFront(currentList[n-1]);
+		this->PopBack();
+		pos--;
+	}
+	return currentList;
+}
+
+template<class T>
+List<T>& List<T>::operator<<(int pos)
+{
+	List<T>& currentList = (*this);
+	while (pos)
+	{
+		PushBack(currentList[0]);
+		currentList.PopFront();
+		pos--;
+	}
+	return currentList;
+}
