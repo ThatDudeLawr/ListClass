@@ -1,48 +1,62 @@
-#include"Lista.h"
 #include<iostream>
+#include"Lista.h"
+
 using namespace std;
+
+void DebugPrintList(const Lista<int>& list);
+
 int main()
 {
 	Lista<int> list;
-	list.pushBack(1);
-	list.pushBack(2);
-	list.pushBack(3);
-	list.pushBack(4);
-	list.pushBack(5);
-	list.pushFront(9);
-	for (int i = 0; i < list.size(); i++)
-	{
-		cout << list[i]<<" ";
-	}
-	cout << endl;
-	
+	list.PushBack(1);
+	list.PushBack(2);
+	list.PushBack(3);
+	list.PushBack(4);
+	list.PushBack(5);
+	list.PushFront(9);
+
+	DebugPrintList(list);
+
 	Lista<int> c;
 	
 	c = list;
 
-	for (int i = 0; i < c.size(); i++)
-	{
-		cout << c[i] << " ";
-	}
-	cout << endl;
+	cout << "List: ";
+	DebugPrintList(c);
 
-	c.popBack();
-	c.popFront();
+	cout << "L == C " << (list == c) << endl;
+
+	c.PopBack();
+	c.PopFront();
 
 	Lista<int> a = c;
 
-	for (int i = 0; i < a.size(); i++)
-	{
-		cout << a[i] << " ";
-	}
-	cout << endl;
+	cout << "A: ";
+	DebugPrintList(a);
+
+	//TODO: Fix this.
+	//cout << "List+C: ";
+	//DebugPrintList(list + c);
 
 	for (int i = 0; i < 10; i++)
 	{
-		cout << a.popBack() << " ";
+		cout << a.PopBack() << " ";
 	}
 
 	cout << endl;
 
+	cout << "L == C " << (list == c) << endl;
+	cout << "C == A " << (list == c) << endl;
+
 	return 0;
+}
+
+void DebugPrintList(const Lista<int>& list)
+{
+	for (int i = 0; i < list.Size(); i++)
+	{
+		cout << list[i] << " ";
+	}
+
+	cout << endl;
 }
