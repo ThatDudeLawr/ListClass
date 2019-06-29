@@ -248,9 +248,9 @@ List<T>& List<T>::operator=(const List<T>& list)
 
 //Verifies if two lists are identical
 template<class T>
-inline bool List<T>::operator==(const List<T>& other)
+inline bool List<T>::operator==(const List<T>& other) const
 {
-    List<T>& currentList = (*this);
+    const List<T>& currentList = (*this);
 
 	int currentSize = Size();
 	int otherSize	= other.Size();
@@ -270,7 +270,7 @@ inline bool List<T>::operator==(const List<T>& other)
 
 //Verifies if two lists are different
 template<class T>
-inline bool List<T>::operator!=(const List<T>& other)
+inline bool List<T>::operator!=(const List<T>& other) const
 {
     return !(*this==other);
 }
@@ -321,9 +321,9 @@ bool List<T>::operator>(const List<T>& other) const
 }
 
 template<class T>
-bool List<T>::operator<=(const List<T>& other)
+bool List<T>::operator<=(const List<T>& other) const
 {
-    List<T>& currentList = (*this);
+    const List<T>& currentList = (*this);
 
     int currentSize = Size();
     int otherSize = other.Size();
@@ -351,9 +351,9 @@ bool List<T>::operator<=(const List<T>& other)
 
 
 template<class T>
-bool List<T>::operator>=(const List<T>& other)
+bool List<T>::operator>=(const List<T>& other) const
 {
-    List<T>& currentList = (*this);
+    const List<T>& currentList = (*this);
 
     int currentSize = Size();
     int otherSize = other.Size();
@@ -381,51 +381,53 @@ bool List<T>::operator>=(const List<T>& other)
 
 //Concatenates the second list into the first
 template<class T>
-inline List<T>& List<T>::operator+(const List<T>& other)
+inline List<T>& List<T>::operator+(const List<T>& other) const
 {
-    List<T>& result = (*this);
+	const List<T>& current = *this;
+	List<T>* resultList = new List<T>(current);
 
 	for (int i = 0; i < other.Size(); i++)
 	{
-		result.PushBack(other[i]);
+		resultList->PushBack(other[i]);
 	}
 
-	return result;
+	return *resultList;
 }
 
 //If the second list is the first list prefix, it return the remaining elements of the first list
 template<class T>
-List<T>& List<T>::operator-(const List<T>& other)
+List<T>& List<T>::operator-(const List<T>& other) const
 {
 	const List<T>& current = *this;
+	List<T>* resultList = new List<T>(current);
 	if (other < current)
 	{
 		for (int i = 0; i < other.Size(); i++)
 		{
-			PopFront();
+			resultList->PopFront();
 		}
 	}
 
-	return *this;
+	return *resultList;
 }
 
-//Returns a list containing  the elements on the same positions with the same values from the two operands
+//Returns a new list containing the elements on the same positions with the same values from the two operands
 template<class T>
-List<T>& List<T>::operator*(const List<T>& other)
+List<T>& List<T>::operator*(const List<T>& other) const
 {
 	const int& n = other.Size();
-	List<T>& b = *this;
+	const List<T>& currentList = *this;
 
-	List<T>* a = new List<T>();
+	List<T>* resultList = new List<T>();
 
 	for (int i = 0; i < n; i++)
 	{
-		if (other[i] == b[i])
+		if (other[i] == currentList[i])
 		{
-			a->PushBack(other[i]);
+			resultList->PushBack(other[i]);
 		}
 	}
-	return *a;
+	return *resultList;
 }
 
 

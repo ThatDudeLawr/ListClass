@@ -1,9 +1,6 @@
 #pragma once
 #include "Nod.h"
 
-//TODO: Make a const correct run.
-//TODO: Create a new list if needed for return.
-
 template <class T>
 class List
 {
@@ -26,19 +23,19 @@ public:
 	T operator [] (int i) const;
 	List<T>& operator =(const List<T>& list);
 
-	bool operator ==(const List<T>& other);
-	bool operator !=(const List<T>& other);
+	bool operator ==(const List<T>& other) const;
+	bool operator !=(const List<T>& other) const;
 
     bool operator <(const List<T>& other) const;
     bool operator >(const List<T>& other) const;
 
-    bool operator <=(const List<T>& other);
-    bool operator >=(const List<T>& other);
+    bool operator <=(const List<T>& other) const;
+    bool operator >=(const List<T>& other) const;
 
-	List<T>& operator+(const List<T>& other);
-	List<T>& operator-(const List<T>& other);
+	List<T>& operator+(const List<T>& other) const;
+	List<T>& operator-(const List<T>& other) const;
 
-	List<T>& operator*(const List<T>& other);
+	List<T>& operator*(const List<T>& other) const;
 
 	List<T>& operator>>(int pos);
 

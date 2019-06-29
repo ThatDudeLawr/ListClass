@@ -5,7 +5,7 @@ using namespace std;
 
 // Macros for debugging
 #define LOGFUNCTION() cout << "Running: " << __FUNCTION__ << "\n";
-#define LOGSPACE()    cout << "------------------------------------------------"; cout << endl; cout << endl;
+#define LOGSPACE()    cout << "------------------------------------------------"<< endl << endl;
 
 void DebugPrintList(const List<int>& list);
 
@@ -240,7 +240,7 @@ void TestSmallerOperator()
     DebugPrintList(listE);
     DebugPrintList(listF);
 
-    cout << "E < F: " << (listE < listF) << endl << endl;
+    cout << "E < F: " << (listE < listF) << endl;
 
     LOGSPACE();
 }
@@ -298,7 +298,7 @@ void TestSmallerOrEqualOperator()
     DebugPrintList(listE);
     DebugPrintList(listF);
 
-    cout << "E <= F: " << (listE <= listF) << endl << endl;
+    cout << "E <= F: " << (listE <= listF) << endl;
 
     LOGSPACE();
 }
@@ -356,7 +356,7 @@ void TestHigherOperator()
     DebugPrintList(listE);
     DebugPrintList(listF);
 
-    cout << "E > F: " << (listE > listF) << endl << endl;
+    cout << "E > F: " << (listE > listF) << endl;
 
     LOGSPACE();
 }
@@ -414,7 +414,7 @@ void TestHigherOrEqualOperator()
     DebugPrintList(listE);
     DebugPrintList(listF);
 
-    cout << "E >= F: " << (listE >= listF) << endl << endl;
+    cout << "E >= F: " << (listE >= listF) << endl;
 
     LOGSPACE();
 }
