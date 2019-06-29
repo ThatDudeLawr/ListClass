@@ -41,7 +41,6 @@ void List<T>::Empty()
 		m_start = i;
 	}
 
-	//TODO: Check if we need m_start = NULL;
 	m_privEnd = NULL;
 }
 
