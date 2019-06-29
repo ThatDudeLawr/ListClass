@@ -18,7 +18,7 @@ Node<T>* List<T>::GetAtIndex(int poz) const
 			return NULL;
 		}
 
-		i = i->getNext();
+		i = i->GetNext();
 		poz--;
 	}
 	return i;
@@ -36,7 +36,7 @@ void List<T>::Empty()
 	Node<T>* i;
 	while (m_start)
 	{
-		i = m_start->getNext();
+		i = m_start->GetNext();
 		delete m_start;
 		m_start = i;
 	}
@@ -95,7 +95,7 @@ void List<T>::PushBack(T val)
 	}
 	else
 	{
-		m_privEnd->setNext(nod);
+		m_privEnd->SetNext(nod);
 		m_privEnd = nod;
 	}
 }
@@ -120,7 +120,7 @@ void List<T>::PushFront(T val)
 	}
 	else
 	{
-		nod->setNext(m_start);
+		nod->SetNext(m_start);
 		m_start = nod;
 	}
 }
@@ -134,7 +134,7 @@ T List<T>::PopBack()
 		return NULL;
 	}
 
-	T val = m_privEnd->getData();
+	T val = m_privEnd->GetData();
 
 	if (m_privEnd == m_start)
 	{
@@ -145,12 +145,12 @@ T List<T>::PopBack()
 	else
 	{
 		Node<T>* i = m_start;
-		while (i->getNext() != m_privEnd)
+		while (i->GetNext() != m_privEnd)
 		{
-			i = i->getNext();
+			i = i->GetNext();
 		}
 
-		i->setNext(NULL);
+		i->SetNext(NULL);
 		delete m_privEnd;
 		m_privEnd = i;
 		return val;
@@ -166,7 +166,7 @@ T List<T>::PopFront()
 		return NULL;
 	}
 
-	T val = m_start->getData();
+	T val = m_start->GetData();
 
 	if (m_start == m_privEnd)
 	{
@@ -176,7 +176,7 @@ T List<T>::PopFront()
 	}
 	else
 	{
-		Node<T>* i = m_start->getNext();
+		Node<T>* i = m_start->GetNext();
 		delete m_start;
 		m_start = i;
 		return val;
@@ -195,10 +195,10 @@ int List<T>::Size() const
 	Node<T>* i = m_start;
 	int count=1;
 
-	while (i->getNext())
+	while (i->GetNext())
 	{
 		count++;
-		i = i->getNext();
+		i = i->GetNext();
 	}
 
 	return count;
@@ -209,7 +209,7 @@ List<T>::operator T() const
 {
     if (m_start != NULL)
     {
-        return m_start->getData();
+        return m_start->GetData();
     }
     else
     {
@@ -228,7 +228,7 @@ T List<T>::operator [] (int i) const
 	}
 	else
 	{
-		return nod->getData();
+		return nod->GetData();
 	}
 }
 

@@ -8,15 +8,15 @@ public:
 	Node(T val);
 	~Node();
 
-    Node<T>* getNext() const;
-    void setNext(Node<T>* p );
+    Node<T>* GetNext() const;
+    void SetNext(Node<T>* p );
 	
-    T getData() const;
-	void setData(T val);
+    T GetData() const;
+	void SetData(T val);
 
 protected:
-    T data; //Stores a value in the node
-    Node* next; //Points toward the next node from the list
+    T m_data; //Stores a value in the node
+    Node* m_next; //Points toward the next node from the list
 };
 
 #include "Nod.impl"

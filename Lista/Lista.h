@@ -41,7 +41,6 @@ public:
 
 	List<T>& operator<<(int pos);
 
-
 protected:
 	Node<T>* GetAtIndex(int poz) const;
 	void Empty();

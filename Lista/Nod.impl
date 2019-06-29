@@ -2,8 +2,8 @@
 template<class T>
 Node<T>::Node(T val)
 {
-    data = val;
-    next = NULL;
+    m_data = val;
+    m_next = NULL;
 }
 
 template<class T>
@@ -12,25 +12,25 @@ Node<T>::~Node()
 }
 
 template<class T>
-Node<T>* Node<T>::getNext() const
+Node<T>* Node<T>::GetNext() const
 {
-    return next;
+    return m_next;
 }
 
 template<class T>
-T Node<T>::getData() const
+T Node<T>::GetData() const
 {
-    return data;
+    return m_data;
 }
 
 template<class T>
-void Node<T>::setNext(Node<T>* p)
+void Node<T>::SetNext(Node<T>* p)
 {
-    next = p;
+    m_next = p;
 }
 
 template<class T>
-void Node<T>::setData(T val)
+void Node<T>::SetData(T val)
 {
-    data = val;
+    m_data = val;
 }
