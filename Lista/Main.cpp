@@ -4,7 +4,7 @@
 using namespace std;
 
 // Macros for debugging
-#define LOGFUNCTION() cout << "Running: " << __FUNCTION__ << "\n";
+#define LOGFUNCTION() cout << "Running: " << __FUNCTION__ << endl;
 #define LOGSPACE()    cout << "------------------------------------------------"<< endl << endl;
 
 void DebugPrintList(const List<int>& list);
